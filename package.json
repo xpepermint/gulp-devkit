@@ -1,0 +1,31 @@
+{
+  "name": "gulp-devkit",
+  "version": "0.0.1",
+  "description": "Common Gulp tasks for rapid NodeJS development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xpepermint/gulp-devkit.git"
+  },
+  "keywords": [
+    "gulp",
+    "asset",
+    "assets",
+    "pipeline",
+    "server",
+    "serve",
+    "livereload",
+    "bundle",
+    "development",
+    "tools"
+  ],
+  "author": "Xpepermint",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpepermint/gulp-devkit/issues"
+  },
+  "homepage": "https://github.com/xpepermint/gulp-devkit"
+}
