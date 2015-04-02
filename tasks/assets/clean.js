@@ -13,13 +13,18 @@ module.exports = function(gulp, config) {
       .pipe(vinylPaths(del));
   });
 
+  gulp.task('assets:clean:views', function() {
+    return gulp.src(config.assets.buildPath + '/**/*.html', { read: false })
+      .pipe(vinylPaths(del));
+  });
+
   gulp.task('assets:clean:images', function() {
-    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.imagesExt + '}', { read: false })
+    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.imagesExt.join(',') + '}', { read: false })
       .pipe(vinylPaths(del));
   });
 
   gulp.task('assets:clean:fonts', function() {
-    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.fontsExt + '}', { read: false })
+    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.fontsExt.join(',') + '}', { read: false })
       .pipe(vinylPaths(del));
   });
 

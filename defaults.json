@@ -6,10 +6,11 @@
   "assets": {
     "stylesPath": "./assets/styles",
     "scriptsPath": "./assets/scripts",
+    "viewsPath": "./assets/views",
     "imagesPath": "./assets/images",
-    "imagesExt": "jpg,png,gif",
+    "imagesExt": ["jpg", "png", "gif"],
     "fontsPath": "./assets/fonts",
-    "fontsExt": "eot,woff,ttf,svg",
+    "fontsExt": ["eot", "woff", "ttf", "svg"],
     "buildPath": "./public/assets"
   }
 }

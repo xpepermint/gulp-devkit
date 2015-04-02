@@ -3,7 +3,7 @@ var gzip = require('gulp-gzip');
 
 module.exports = function(gulp, config) {
 
-  var match = config.assets.buildPath + '/**/*.{css,js,' + config.assets.imagesExt + ', ' + config.assets.fontsExt + '}';
+  var match = config.assets.buildPath + '/**/*.{css,js,' + config.assets.imagesExt.join(',') + ', ' + config.assets.fontsExt.join(',') + '}';
 
   gulp.task('assets:bundle:fingerprint', ['assets:pack'], function() {
     var revAll = new RevAll();
