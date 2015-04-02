@@ -27,5 +27,18 @@
   "bugs": {
     "url": "https://github.com/xpepermint/gulp-devkit/issues"
   },
-  "homepage": "https://github.com/xpepermint/gulp-devkit"
+  "homepage": "https://github.com/xpepermint/gulp-devkit",
+  "dependencies": {
+    "gulp-babel": "^5.0.0",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-file-include": "^0.8.0",
+    "gulp-gzip": "^1.1.0",
+    "gulp-live-server": "0.0.8",
+    "gulp-react": "^3.0.1",
+    "gulp-rev-all": "^0.8.12",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.1.0",
+    "lodash": "^3.6.0"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "main": "./index.js",
+  "assets": {
+    "stylesPath": "./assets/styles",
+    "scriptsPath": "./assets/scripts",
+    "imagesPath": "./assets/images",
+    "imagesExt": "jpg,png,gif",
+    "fontsPath": "./assets/fonts",
+    "fontsExt": "eot,woff,ttf,svg",
+    "buildPath": "./public/assets"
+  }
+}
