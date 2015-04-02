@@ -1,5 +1,8 @@
 {
-  "main": "./index.js",
+  "server": {
+    "execFile": "./index.js",
+    "watchPaths": ["./index.js", "./bin/**/*", "./app/**/*", "./views/**/*", "./public/**/*"]
+  },
   "assets": {
     "stylesPath": "./assets/styles",
     "scriptsPath": "./assets/scripts",

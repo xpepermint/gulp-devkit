@@ -3,9 +3,9 @@ var gls = require('gulp-live-server');
 module.exports = function(gulp, config) {
 
   gulp.task('serve', ['watch'], function() {
-    var server = gls.new(config.main);
+    var server = gls.new(config.serve.execFile);
     server.start();
-    gulp.watch([config.assets.buildPath + '/**/*'], server.notify);
+    gulp.watch(config.serve.watchPaths, server.notify);
   });
 
 };

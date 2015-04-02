@@ -1,27 +1,31 @@
-var rimraf = require('gulp-rimraf');
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 
 module.exports = function(gulp, config) {
 
   gulp.task('assets:clean:styles', function() {
-    return gulp.src(config.assets.buildPath + '/**/.css', { read: false })
-      .pipe(rimraf());
+    return gulp.src(config.assets.buildPath + '/**/*.css')
+      .pipe(vinylPaths(del));
   });
 
   gulp.task('assets:clean:scripts', function() {
-    return gulp.src(config.assets.buildPath + '/**/.js', { read: false })
-      .pipe(rimraf());
+    return gulp.src(config.assets.buildPath + '/**/*.js', { read: false })
+      .pipe(vinylPaths(del));
   });
 
   gulp.task('assets:clean:images', function() {
-    return gulp.src(config.assets.buildPath + '/**/.{' + config.assets.imagesExt + '}', { read: false })
-      .pipe(rimraf());
+    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.imagesExt + '}', { read: false })
+      .pipe(vinylPaths(del));
   });
 
   gulp.task('assets:clean:fonts', function() {
-    return gulp.src(config.assets.buildPath + '/**/.{' + config.assets.fontsExt + '}', { read: false })
-      .pipe(rimraf());
+    return gulp.src(config.assets.buildPath + '/**/*.{' + config.assets.fontsExt + '}', { read: false })
+      .pipe(vinylPaths(del));
   });
 
-  gulp.task('assets:clean', ['assets:clean:styles', 'assets:clean:scripts', 'assets:clean:images', 'assets:clean:fonts']);
+  gulp.task('assets:clean', function() {
+    return gulp.src(config.assets.buildPath)
+      .pipe(vinylPaths(del));
+  });
 
 };
