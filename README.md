@@ -5,7 +5,7 @@
 **Features:**
 
 * Preconfigured development server with integrated livereload listener.
-* Asset pipeline handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with jsx syntax), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
+* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with jsx syntax), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
 * Asset bundler for precompiling assets.
 
 ## Setup
@@ -26,7 +26,7 @@ Now run `gulp` command and start building your next nodejs app. Note that you wi
 
 ## Config
 
-Open `defaults.json` file to see the default configuration values.
+Open [defaults.json](defaults.json) file to see the default configuration values.
 
 ### serve.execFile: String
 
