@@ -1,6 +1,6 @@
 {
   "name": "gulp-devkit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Common Gulp tasks for rapid NodeJS development.",
   "main": "index.js",
   "scripts": {
@@ -20,10 +20,15 @@
     "livereload",
     "bundle",
     "development",
-    "tools"
+    "dev",
+    "tools",
+    "clean",
+    "compile",
+    "pack",
+    "bundle"
   ],
   "author": "Xpepermint",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/xpepermint/gulp-devkit/issues"
   },
