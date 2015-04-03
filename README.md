@@ -5,7 +5,7 @@
 **Features:**
 
 * Preconfigured development server with integrated livereload listener.
-* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with jsx syntax), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
+* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with react and bable), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
 * Asset bundler for precompiling assets.
 
 ## Setup
@@ -23,6 +23,8 @@ gulp.task('default', ['serve']);
 ```
 
 Now run `gulp` command and start building your next nodejs app. Note that you will need to install the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for your browser for livereload to work.
+
+When deploying your application to a production server, run `gulp assets:bundle` to precompile assets. If your application dynamically renders views, you will need to manually append a fingerprint to every asset file. If your application is using ExpressJS framework check the [express-manifest](https://github.com/xpepermint/express-manifest) middleware which automatically handles file names for you.
 
 ## Config
 
