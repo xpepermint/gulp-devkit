@@ -1,5 +1,5 @@
 {
-  "server": {
+  "serve": {
     "execFile": "./index.js",
     "watchPaths": ["./index.js", "./bin/**/*", "./app/**/*", "./views/**/*", "./public/**/*"]
   },

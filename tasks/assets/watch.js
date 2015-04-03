@@ -8,6 +8,10 @@ module.exports = function(gulp, config) {
     return gulp.watch(config.assets.scriptsPath + '/**/*.js', ['assets:compile:scripts']);
   });
 
+  gulp.task('assets:watch:views', ['assets:compile:views'], function() {
+    return gulp.watch(config.assets.scriptsPath + '/**/*.html', ['assets:compile:views']);
+  });
+
   gulp.task('assets:watch:images', ['assets:compile:images'], function() {
     return gulp.watch(config.assets.imagesPath + '/**/*.{' + config.assets.imagesExt.join(',') + '}', ['assets:compile:images']);
   });
@@ -16,6 +20,6 @@ module.exports = function(gulp, config) {
     return gulp.watch(config.assets.fontsPath + '/**/*.{' + config.assets.fontsExt.join(',') + '}', ['assets:compile:fonts']);
   });
 
-  gulp.task('watch', ['assets:watch:styles', 'assets:watch:scripts', 'assets:watch:images', 'assets:watch:fonts']);
+  gulp.task('watch', ['assets:watch:styles', 'assets:watch:scripts', 'assets:watch:views', 'assets:watch:images', 'assets:watch:fonts']);
 
 };

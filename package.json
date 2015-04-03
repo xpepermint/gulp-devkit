@@ -1,6 +1,6 @@
 {
   "name": "gulp-devkit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Common Gulp tasks for rapid NodeJS development.",
   "main": "index.js",
   "scripts": {
