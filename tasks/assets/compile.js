@@ -1,3 +1,4 @@
+var plumber = require('gulp-plumber');
 var stylus = require('gulp-stylus');
 var include = require('gulp-file-include');
 var bable = require('gulp-babel');
@@ -11,6 +12,7 @@ module.exports = function(gulp, config) {
     var cssstr =  gulp.src(config.paths.assets.styles + '/**/*.css')
       .pipe(gulp.dest(config.paths.assets.build + ''));
     var stylstr = gulp.src(config.paths.assets.styles + '/**/*.styl')
+      .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(stylus())
       .pipe(gulp.dest(config.paths.assets.build + ''));
@@ -20,10 +22,12 @@ module.exports = function(gulp, config) {
 
   gulp.task('assets:compile:scripts', ['assets:clean:scripts'], function() {
     return gulp.src(config.paths.assets.scripts + '/**/*.js')
+      .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(bable())
       .pipe(gulp.dest(config.paths.assets.build + ''))
-      .pipe(livereload());
+      .pipe(livereload())
+      .on('error', function(err) { console.error(err.toString()) });
   });
 
   gulp.task('assets:compile:views', ['assets:clean:views'], function() {
@@ -31,6 +35,7 @@ module.exports = function(gulp, config) {
       .pipe(include({ prefix: '//= ' }))
       .pipe(gulp.dest(config.paths.assets.build + ''));
     var jadestr = gulp.src(config.paths.assets.views + '/**/*.jade')
+      .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(jade())
       .pipe(gulp.dest(config.paths.assets.build + ''));
