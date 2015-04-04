@@ -15,14 +15,15 @@ Your `gulpfile.js` should look something like the example below.
 ```js
 var gulp = require('gulp');
 
-var config = {}
-require('gulp-devkit')(gulp, config);
+require('gulp-devkit')(gulp, {
+  nodemon: { script: 'bin/www.js' }
+});
 
 gulp.task('default', ['serve']);
 
 ```
 
-Now run `gulp` command and start building your next nodejs app. Note that you will need to install the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for your browser for livereload to work.
+Now run `gulp` command and start building your nodejs app. Note that you will need to install the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for your browser for livereload to work.
 
 When deploying your application to a production server, run `gulp assets:bundle` to precompile assets. If your application dynamically renders views, you will need to manually append a fingerprint to every asset file. If your application is using ExpressJS framework check the [express-manifest](https://github.com/xpepermint/express-manifest) middleware which automatically handles file names for you.
 
@@ -30,45 +31,49 @@ When deploying your application to a production server, run `gulp assets:bundle`
 
 Open [defaults.json](defaults.json) file to see the default configuration values.
 
-### serve.execFile: String
+### nodemon: Hash
 
-> Application's main file (executable).
+> [Nodemon](https://www.npmjs.com/package/gulp-nodemon) configuration options.
 
-### serve.watchPaths: String[]
+### paths.assets.styles: String
 
-> List of paths to watch and reload on change.
+> Path to assets source folder with styles.
 
-### assets.stylesPath: String
+### paths.assets.scripts: String
 
-> Path to source folder with styles.
+> Path to assets source folder with scripts.
 
-### assets.scriptsPath: String
+### paths.assets.views: String
 
-> Path to source folder with scripts.
+> Path to assets source folder with views.
 
-### assets.viewsPath: String
+### paths.assets.images: String
 
-> Path to source folder with views.
+> Path to assets source folder with images.
 
-### assets.imagesPath: String
+### paths.assets.fonts: String
 
-> Path to source folder with images.
+> Path to assets source folder with fonts.
 
-### assets.imagesExt: String[]
+### paths.assets.build: String
+
+> Path to compiled/precompiled assets.
+
+### paths.views: String
+
+> Path to dynamic views to watch.
+
+### ext.images: String[]
 
 > List of allowed image file exstensions.
 
-### assets.fontsPath: String
-
-> Path to source folder with fonts.
-
-### assets.fontsExt: String[]
+### ext.fonts: String[]
 
 > List of allowed font file exstensions.
 
-### assets.buildPath: String
+### livereload.enabled: Boolean
 
-> Path to compiled/precompiled assets.
+> Enable/disabled [livereload](https://github.com/vohof/gulp-livereload).
 
 ## Tasks
 

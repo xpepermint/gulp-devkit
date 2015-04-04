@@ -1,11 +1,17 @@
-var gls = require('gulp-live-server');
+var nodemon = require('gulp-nodemon');
+var livereload = require('gulp-livereload');
 
 module.exports = function(gulp, config) {
+  var delay;
+
+  var notify = function() {
+    if (delay) clearTimeout(delay);
+    delay = setTimeout(livereload.reload, 1000);
+  }
 
   gulp.task('serve', ['watch'], function() {
-    var server = gls.new(config.serve.execFile);
-    server.start();
-    gulp.watch(config.serve.watchPaths, server.notify);
+    nodemon(config.nodemon)
+    .on('start', notify)
+    .on('restart', notify);
   });
-
 };

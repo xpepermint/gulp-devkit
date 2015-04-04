@@ -1,16 +1,26 @@
 {
-  "serve": {
-    "execFile": "./index.js",
-    "watchPaths": ["./index.js", "./bin/**/*", "./app/**/*", "./views/**/*", "./public/**/*"]
+  "nodemon": {
+    "script": "./index.js",
+    "watch": "./",
+    "ext": "js json",
+    "ignore": ["./assets/scripts", "./public/assets"]
   },
-  "assets": {
-    "stylesPath": "./assets/styles",
-    "scriptsPath": "./assets/scripts",
-    "viewsPath": "./assets/views",
-    "imagesPath": "./assets/images",
-    "imagesExt": ["jpg", "png", "gif"],
-    "fontsPath": "./assets/fonts",
-    "fontsExt": ["eot", "woff", "ttf", "svg"],
-    "buildPath": "./public/assets"
+  "livereload": {
+    "enabled": true
+  },
+  "paths": {
+    "assets": {
+      "styles": "./assets/styles",
+      "scripts": "./assets/scripts",
+      "views": "./assets/views",
+      "images": "./assets/images",
+      "fonts": "./assets/fonts",
+      "build": "./public/assets"
+    },
+    "views": "./views"
+  },
+  "ext": {
+    "images": ["jpg", "png", "gif"],
+    "fonts": ["eot", "woff", "ttf", "svg"]
   }
 }

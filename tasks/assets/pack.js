@@ -6,22 +6,22 @@ var react = require('gulp-react');
 module.exports = function(gulp, config) {
 
   gulp.task('assets:pack:styles', ['assets:compile:styles'], function() {
-    return gulp.src([config.assets.buildPath + '/**/*.css'])
+    return gulp.src([config.paths.assets.build + '/**/*.css'])
       .pipe(cssmin())
-      .pipe(gulp.dest(config.assets.buildPath));
+      .pipe(gulp.dest(config.paths.assets.build));
   });
 
   gulp.task('assets:pack:scripts', ['assets:compile:scripts'], function() {
-    return gulp.src([config.assets.buildPath + '/**/*.js'])
+    return gulp.src([config.paths.assets.build + '/**/*.js'])
       .pipe(jsmin())
       .pipe(react())
-      .pipe(gulp.dest(config.assets.buildPath));
+      .pipe(gulp.dest(config.paths.assets.build));
   });
 
   gulp.task('assets:pack:views', ['assets:compile:views'], function() {
-    return gulp.src([config.assets.buildPath + '/**/*.html'])
+    return gulp.src([config.paths.assets.build + '/**/*.html'])
       .pipe(htmlmin())
-      .pipe(gulp.dest(config.assets.buildPath));
+      .pipe(gulp.dest(config.paths.assets.build));
   });
 
   gulp.task('assets:pack:images', ['assets:compile:images']);
