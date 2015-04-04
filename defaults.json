@@ -3,7 +3,7 @@
     "script": "./index.js",
     "watch": "./",
     "ext": "js json",
-    "ignore": ["./assets/scripts", "./public/assets"]
+    "ignore": ["./assets/scripts", "./public/assets", "./tmp"]
   },
   "livereload": {
     "enabled": true
