@@ -5,7 +5,7 @@
 **Features:**
 
 * Preconfigured development server with integrated livereload listener.
-* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with react and bable), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
+* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with react, bable and browserify), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
 * Asset bundler for precompiling assets.
 
 ## Setup

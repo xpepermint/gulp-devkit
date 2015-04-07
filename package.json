@@ -37,6 +37,7 @@
     "del": "^1.1.1",
     "event-stream": "^3.3.0",
     "gulp-babel": "^5.0.0",
+    "gulp-browserify": "^0.5.1",
     "gulp-cssmin": "^0.1.6",
     "gulp-file-include": "^0.8.0",
     "gulp-gzip": "^1.1.0",

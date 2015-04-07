@@ -2,6 +2,7 @@ var plumber = require('gulp-plumber');
 var stylus = require('gulp-stylus');
 var include = require('gulp-file-include');
 var bable = require('gulp-babel');
+var browserify = require('gulp-browserify');
 var jade = require('gulp-jade');
 var es = require('event-stream');
 var livereload = require('gulp-livereload');
@@ -10,6 +11,7 @@ module.exports = function(gulp, config) {
 
   gulp.task('assets:compile:styles', ['assets:clean:styles'], function() {
     var cssstr =  gulp.src(config.paths.assets.styles + '/**/*.css')
+      .pipe(include({ prefix: '//= ' }))
       .pipe(gulp.dest(config.paths.assets.build + ''));
     var stylstr = gulp.src(config.paths.assets.styles + '/**/*.styl')
       .pipe(plumber())
@@ -25,6 +27,7 @@ module.exports = function(gulp, config) {
       .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(bable())
+      .pipe(browserify())
       .pipe(gulp.dest(config.paths.assets.build + ''))
       .pipe(livereload())
       .on('error', function(err) { console.error(err.toString()) });
