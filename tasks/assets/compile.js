@@ -11,14 +11,14 @@ module.exports = function(gulp, config) {
 
   gulp.task('assets:compile:styles', ['assets:clean:styles'], function() {
     var cssstr =  gulp.src(config.paths.assets.styles + '/**/*.css')
-      .pipe(include({ prefix: '//= ' }))
-      .pipe(gulp.dest(config.paths.assets.build + ''));
+      .pipe(gulp.dest(config.paths.assets.build));
     var stylstr = gulp.src(config.paths.assets.styles + '/**/*.styl')
       .pipe(plumber())
-      .pipe(include({ prefix: '//= ' }))
       .pipe(stylus())
-      .pipe(gulp.dest(config.paths.assets.build + ''));
+      .pipe(gulp.dest(config.paths.assets.build));
     return es.merge(cssstr, stylstr)
+      .pipe(plumber())
+      .pipe(include({ prefix: '//= ' }))
       .pipe(livereload());
   });
 
@@ -27,8 +27,8 @@ module.exports = function(gulp, config) {
       .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(bable())
-      .pipe(browserify())
-      .pipe(gulp.dest(config.paths.assets.build + ''))
+      .pipe(browserify({ transform: 'reactify' }))
+      .pipe(gulp.dest(config.paths.assets.build))
       .pipe(livereload())
       .on('error', function(err) { console.error(err.toString()) });
   });
@@ -36,25 +36,25 @@ module.exports = function(gulp, config) {
   gulp.task('assets:compile:views', ['assets:clean:views'], function() {
     var htmlstr =  gulp.src(config.paths.assets.views + '/**/*.html')
       .pipe(include({ prefix: '//= ' }))
-      .pipe(gulp.dest(config.paths.assets.build + ''));
+      .pipe(gulp.dest(config.paths.assets.build));
     var jadestr = gulp.src(config.paths.assets.views + '/**/*.jade')
       .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(jade())
-      .pipe(gulp.dest(config.paths.assets.build + ''));
+      .pipe(gulp.dest(config.paths.assets.build));
     return es.merge(htmlstr, jadestr)
       .pipe(livereload());
   });
 
   gulp.task('assets:compile:images', ['assets:clean:images'], function() {
     return gulp.src(config.paths.assets.images + '/**/*.{' + config.ext.images.join(',') + '}')
-      .pipe(gulp.dest(config.paths.assets.build + ''))
+      .pipe(gulp.dest(config.paths.assets.build))
       .pipe(livereload());
   });
 
   gulp.task('assets:compile:fonts', ['assets:clean:fonts'], function() {
     return gulp.src(config.paths.assets.fonts + '/**/*.{' + config.ext.fonts.join(',') + '}')
-      .pipe(gulp.dest(config.paths.assets.build + ''))
+      .pipe(gulp.dest(config.paths.assets.build))
       .pipe(livereload());
   });
 

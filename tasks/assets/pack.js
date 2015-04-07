@@ -1,7 +1,6 @@
 var cssmin = require('gulp-cssmin');
 var jsmin = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
-var react = require('gulp-react');
 
 module.exports = function(gulp, config) {
 
@@ -14,7 +13,6 @@ module.exports = function(gulp, config) {
   gulp.task('assets:pack:scripts', ['assets:compile:scripts'], function() {
     return gulp.src([config.paths.assets.build + '/**/*.js'])
       .pipe(jsmin())
-      .pipe(react())
       .pipe(gulp.dest(config.paths.assets.build));
   });
 
