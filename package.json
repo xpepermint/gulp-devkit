@@ -1,6 +1,6 @@
 {
   "name": "gulp-devkit",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Common Gulp tasks for rapid NodeJS development.",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,6 @@
     "del": "^1.1.1",
     "event-stream": "^3.3.0",
     "gulp-babel": "^5.0.0",
-    "gulp-browserify": "^0.5.1",
     "gulp-cssmin": "^0.1.6",
     "gulp-file-include": "^0.8.0",
     "gulp-gzip": "^1.1.0",
@@ -46,11 +45,11 @@
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
     "gulp-plumber": "^1.0.0",
+    "gulp-react": "^3.0.1",
     "gulp-rev-all": "^0.8.12",
     "gulp-stylus": "^2.0.1",
     "gulp-uglify": "^1.1.0",
     "lodash": "^3.6.0",
-    "reactify": "^1.1.0",
     "vinyl-paths": "^1.0.0"
   }
 }

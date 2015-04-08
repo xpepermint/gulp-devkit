@@ -5,7 +5,7 @@
 **Features:**
 
 * Preconfigured development server with integrated livereload listener.
-* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with react, bable and browserify), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
+* Asset pipeline, handling sprockets-like includes, styles (`css`, `styl`), scripts (`js` with react and bable), views (`html`, `jade`), images (`jpg`, `png`, `gif`) and fonts (`eot`, `woff`, `ttf`, `svg`).
 * Asset bundler for precompiling assets.
 
 ## Setup
@@ -21,6 +21,18 @@ require('gulp-devkit')(gulp, {
 
 gulp.task('default', ['serve']);
 
+```
+
+And here is your main application file example.
+
+```js
+'use strict';
+//= include('./hat.js')
+//= include('./person.js')
+
+(function() {
+  React.render(...);
+})();
 ```
 
 Now run `gulp` command and start building your nodejs app. Note that you will need to install the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for your browser for livereload to work.

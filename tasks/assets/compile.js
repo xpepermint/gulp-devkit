@@ -2,7 +2,7 @@ var plumber = require('gulp-plumber');
 var stylus = require('gulp-stylus');
 var include = require('gulp-file-include');
 var bable = require('gulp-babel');
-var browserify = require('gulp-browserify');
+var react = require('gulp-react')
 var jade = require('gulp-jade');
 var es = require('event-stream');
 var livereload = require('gulp-livereload');
@@ -27,7 +27,7 @@ module.exports = function(gulp, config) {
       .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(bable())
-      .pipe(browserify({ transform: 'reactify' }))
+      .pipe(react({harmony: true, es6module: true}))
       .pipe(gulp.dest(config.paths.assets.build))
       .pipe(livereload())
       .on('error', function(err) { console.error(err.toString()) });
@@ -35,6 +35,7 @@ module.exports = function(gulp, config) {
 
   gulp.task('assets:compile:views', ['assets:clean:views'], function() {
     var htmlstr =  gulp.src(config.paths.assets.views + '/**/*.html')
+      .pipe(plumber())
       .pipe(include({ prefix: '//= ' }))
       .pipe(gulp.dest(config.paths.assets.build));
     var jadestr = gulp.src(config.paths.assets.views + '/**/*.jade')
